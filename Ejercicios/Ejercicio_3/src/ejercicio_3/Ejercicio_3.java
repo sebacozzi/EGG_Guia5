@@ -23,7 +23,7 @@ public class Ejercicio_3 {
             System.out.println("Hay %d números de %d digitos.".formatted(digitos[i], i));
 
         }
-
+         
     }
 
     private static int[] contarDigitos(int[] vector) {

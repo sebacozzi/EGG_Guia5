@@ -17,15 +17,11 @@ public class Ejercicio_2 {
         System.out.println("Llenando vector");
         int val;
         vector = llenarVector(dim);
-        int help = 0;
-        do {
-            if (help == 3) {
                 System.out.println("Ayuda: ");
                 mostrar(vector);
-            }
             val = pregInt("Ingresar el valor a buscar: ");
-            help++;
-        } while (!buscaValor(vector, val));
+           buscaValor(vector, val);
+        
     }
 
     private static void mensSS(String mensaje) {
@@ -47,19 +43,20 @@ public class Ejercicio_2 {
         return vector;
     }
 
-    private static boolean buscaValor(int[] vector, int valorBuscado) {
-        boolean enco = false;
+    //private static boolean buscaValor(int[] vector, int valorBuscado) {
+    private static void buscaValor(int[] vector, int valorBuscado) {
+        boolean encontro = false;
         for (int i = 0; i < vector.length; i++) {
             if (vector[i] == valorBuscado) {
-                if (enco) {
-                    System.out.println("El valor %d se encuentra repetido en la posición %d del vector".formatted(valorBuscado, i));
+                if (encontro) {
+                    System.out.println("El valor "+valorBuscado+" se encuentra repetido en la posición "+ i +" del vector");
                 } else {
-                    System.out.println("El valor %d se encuentra en la posición %d del vector".formatted(valorBuscado, i));
-                    enco = true;
+                    System.out.println("El valor " + valorBuscado +" se encuentra en la posición "+ i +" del vector");
+                    encontro = true;
                 }
             }
         }
-        return enco;
+        if (!encontro) System.out.println("El valor buscado no se encuentra en el vector.");
     }
 
     private static void mostrar(int[] vector) {
